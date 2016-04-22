@@ -34,7 +34,7 @@ public class Main {
 		jedis.flushDB();
 		jedis.flushAll();
 		ConnectionPool connPool = new ConnectionPool("com.mysql.jdbc.Driver"
-				 ,"jdbc:mysql://133.130.126.105:3306/dht?useUnicode=true&characterEncoding=UTF-8" ,"root" ,"1993527wan");
+				 ,"jdbc:mysql://xxx.xxx.xxx.xxx:3306/dht?useUnicode=true&characterEncoding=UTF-8" ,"root" ,"123456");
 		connPool .createPool();
 		
 		BlockingQueue<DownloadPeer> dps = new LinkedBlockingQueue<>();
