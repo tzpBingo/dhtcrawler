@@ -175,11 +175,9 @@ public class AnnouncePeerInfoHashWireHandler implements IInfoHashHandler {
 	 * @throws IOException 
 	 */
 	private void requestPieces() throws IOException {
-		/*try {
-			metadata = new byte[this.metadata_size];
-		} catch (OutOfMemoryError e) {
-			exit();
-		}*/
+
+		metadata = new byte[this.metadata_size];
+
 		int num_piece = (int) Math.ceil(this.metadata_size / (16.0 * 1024));
 		finished = new boolean[num_piece];
 		for (int piece = 0; piece < num_piece; piece++) {
@@ -188,8 +186,6 @@ public class AnnouncePeerInfoHashWireHandler implements IInfoHashHandler {
 	}
 	
 	private void requestPiece(int piece) throws IOException {
-		
-		metadata = new byte[metadata_size];
 
 		Map<String, Object> map = new HashMap<>();
 		map.put("msg_type", 0);
